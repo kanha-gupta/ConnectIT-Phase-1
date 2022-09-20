@@ -1,0 +1,62 @@
+body{
+    background-color: aqua;
+}
+
+
+.container{
+    background-color: aliceblue;
+    height: 400px;
+    width: 100%;
+    margin-top: 20px;
+    /*     */
+}
+.container5{
+  margin-top: 200px;
+  justify-content: center;
+}
+
+.box-wrap{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:10%;
+  }
+  .box{
+    color: white;
+    font-size: larger;
+    font-family: sans-serif;
+    font-weight: bolder;
+    padding:30px;
+    margin:2%;
+    background:rgb(123, 235, 235);
+    /* background-image: url("mudit jfbdikvl.png"); */
+    /* background-image: ("\pexels-eberhard-grossgasteiger-1624496.jpg"); */
+    width:30%;
+    height: 400px;
+    border:1px solid #d6d6d6;
+    box-shadow:0 2px 3px 0px rgba(0,0,0,0.25);
+    border-radius:10px;
+    transition:.2s all; 
+  }
+  .box1{
+    padding:30px;
+    margin:2%;
+    background-image: image('C:\Users\ASUS\Desktop\web develope\spotify');
+    width:30%;
+    border:1px solid #d6d6d6;
+    box-shadow:0 2px 3px 0px rgba(0,0,0,0.25);
+    border-radius:3px;
+    transition:.2s all; 
+  }
+  .box-wrap:hover .box{
+    filter:blur(3px);
+    opacity:.5;
+    transform: scale(.98);
+    box-shadow:none;
+  }
+  .box-wrap:hover .box:hover{
+    transform:scale(1);
+    filter:blur(0px);
+    opacity:1;
+    box-shadow:0 8px 20px 0px rgba(0,0,0,0.125);
+  }
