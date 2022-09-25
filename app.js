@@ -22,7 +22,11 @@ const userschema={
 const User = new mongoose.model("User", userschema);
 
 app.get("/", function (req,res) {
-    res.render("index1.html");
+    res.redirect("/register")
+})
+//below for home page.Not for direct access
+app.get("/redirect", function (req,res) {
+   res.render("home.ejs")
 })
 
 app.get("/login",function (req, res) {
@@ -62,7 +66,7 @@ app.post("/login", function (req, res) {
         } else {
             if(foundUser){
                 if(foundUser.password === password){
-                    res.render("home.html")
+                    res.render("home.ejs")
                 }
             }
         }
@@ -76,7 +80,7 @@ app.post("/test", function (req, res) {
     const StoredData = JSON.parse(fileData);   //parsing the data (because before it's only a text technically)
     StoredData.push(Studentdata)    //adding new data by .push
     fs.writeFileSync(filePath,JSON.stringify(StoredData))  //now writing that data
-    res.redirect("/")
+    res.render("/redirect")
     console.log(Studentdata);
 });
 
