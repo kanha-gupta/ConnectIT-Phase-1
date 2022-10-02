@@ -38,9 +38,25 @@ app.get("/register" , function (req, res) {
 app.get("/test", function (req,res) {
     res.render("skillregistration.ejs");
 })
+app.get("/about" , function (req, res) {
+    res.render("about.ejs");
+})
 app.get("/data/recommend.json", function (req,res) {
     res.sendFile(__dirname + "/data/recommend.json")
 })
+app.get("/public/css/homepage.css", function (req, res) {
+    res.sendFile(__dirname + "/public/css/homepage.css")
+})
+app.get("/public/images/mudit%20edit%20first.png" , function (req, res) {
+    res.sendFile(__dirname + "/public/images/img1.png")
+})
+app.get("/public/images/mudit%20bvdfbvdbv.png" , function (req, res) {
+    res.sendFile(__dirname + "/public/images/img2.png")
+})
+app.get("/public/images/mudit%20jfbdikvl.png" , function (req, res) {
+    res.sendFile(__dirname + "/public/images/img3.png")
+})
+
 
 app.post("/register",function (req,res) {
     const newUser=new User({
@@ -80,7 +96,7 @@ app.post("/test", function (req, res) {
     const StoredData = JSON.parse(fileData);   //parsing the data (because before it's only a text technically)
     StoredData.push(Studentdata)    //adding new data by .push
     fs.writeFileSync(filePath,JSON.stringify(StoredData))  //now writing that data
-    res.render("/redirect")
+    res.render("home.ejs")
     console.log(Studentdata);
 });
 
